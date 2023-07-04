@@ -4,17 +4,17 @@
 
 <p id="description">WebChat is a Firebase maintained real time chat Application that allows users to chat and send images securely.</p><br>
 
-<h2>🚀 Demo</h2><br>
+<h2>🚀 Demo</h2>
 
 [click here to watch live demo of WebChat]( https://akash-1627.github.io/WebChat/)
 <br><br>
 <h2>Project Screenshots:</h2><br>
 
 <img src="https://raw.githubusercontent.com/Akash-1627/WebChat/main/src/Images/home.png" alt="project-screenshot" width="500" height="300/">
-<br><br><br>
+<br><br>
   
   
-<h2>🧐 Features</h2><br>
+<h2>🧐 Features</h2>
 
 Here're some of the project's best features:
 
@@ -25,7 +25,7 @@ Here're some of the project's best features:
 <br><br><br>
   
   
-<h2>💻 Built with</h2><br>
+<h2>💻 Built with</h2>
 
 Technologies used in the project:
 
@@ -35,10 +35,10 @@ Technologies used in the project:
 *   CSS
 *   HTML
 <br><br><br>
-<h2>🛡️ License:</h2><br>
+<h2>🛡️ License:</h2>
 
 This project is licensed under the MIT License
 <br><br><br>
-<h2>💖Like my work?</h2><br>
+<h2>💖Like my work?</h2>
 
 If you like this project feel free to give it a star.
