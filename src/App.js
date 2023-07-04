@@ -29,7 +29,7 @@ function App() {
             path="/WebChat"
             element={
               <ProtectedRoute>
-                <Display />
+                <Home />
               </ProtectedRoute>
             }
           />
