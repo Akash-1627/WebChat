@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/webchat/static/css/main.acc6cf96.css",
-    "main.js": "/webchat/static/js/main.104f890f.js",
-    "static/js/787.4ed02641.chunk.js": "/webchat/static/js/787.4ed02641.chunk.js",
-    "static/media/gradient.jpg": "/webchat/static/media/gradient.a3b452f6493c51da49dc.jpg",
-    "index.html": "/webchat/index.html",
-    "main.acc6cf96.css.map": "/webchat/static/css/main.acc6cf96.css.map",
-    "main.104f890f.js.map": "/webchat/static/js/main.104f890f.js.map",
-    "787.4ed02641.chunk.js.map": "/webchat/static/js/787.4ed02641.chunk.js.map"
+    "main.css": "/WebChat/static/css/main.90ff783e.css",
+    "main.js": "/WebChat/static/js/main.868d2c64.js",
+    "static/js/787.4ed02641.chunk.js": "/WebChat/static/js/787.4ed02641.chunk.js",
+    "static/media/gradient.jpg": "/WebChat/static/media/gradient.a3b452f6493c51da49dc.jpg",
+    "index.html": "/WebChat/index.html",
+    "main.90ff783e.css.map": "/WebChat/static/css/main.90ff783e.css.map",
+    "main.868d2c64.js.map": "/WebChat/static/js/main.868d2c64.js.map",
+    "787.4ed02641.chunk.js.map": "/WebChat/static/js/787.4ed02641.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.acc6cf96.css",
-    "static/js/main.104f890f.js"
+    "static/css/main.90ff783e.css",
+    "static/js/main.868d2c64.js"
   ]
 }
