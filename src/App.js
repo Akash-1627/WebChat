@@ -14,7 +14,7 @@ function App() {
 
   const ProtectedRoute = ({children}) => {
     if(!currentUser){
-      return <Navigate to="/login"/>
+      return <Navigate to="/register"/>
     }
     return children
   }
@@ -22,8 +22,17 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-        <Route path='/'></Route>
-        <Route index element={<ProtectedRoute><Home/></ProtectedRoute>}></Route>
+        {/* <Route path='/'></Route>
+        <Route index element={<ProtectedRoute><Home/></ProtectedRoute>}></Route> */}
+        <Route path="/" element={<Home />} />
+          <Route
+            path="/WebChat"
+            element={
+              <ProtectedRoute>
+                <Display />
+              </ProtectedRoute>
+            }
+          />
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
         <Route path='/display' element={<Display/>}></Route>
