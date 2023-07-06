@@ -41,7 +41,7 @@ const Register = () => {
         mpassword = password1;
         const regExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/
         // const emregExp = /^[a-zA-Z0-9._]+@[a-z]+\.[a-z]{2-6}$/
-        // const emregExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        const emregExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
         if(password === ""){
             setMessage("Please enter Password")
         }
