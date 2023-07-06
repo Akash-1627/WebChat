@@ -24,7 +24,7 @@ function App() {
       <Routes>
         {/* <Route path='/'></Route>
         <Route index element={<ProtectedRoute><Home/></ProtectedRoute>}></Route> */}
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
           <Route
             path="/WebChat"
             element={
