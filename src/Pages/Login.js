@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, CSSProperties } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase';
+import ClipLoader from "react-spinners/ClipLoader";  
+
 
 
 const Login = () => {
@@ -9,7 +11,11 @@ const Login = () => {
     const navigate = useNavigate();
     const [password, setPassword] = useState('');
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const [loading, setLoading] = useState(false);
 
+    const override: CSSProperties = {
+        paddingTop: '10px'
+      };
     const handleTogglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
       };
@@ -25,7 +31,11 @@ const Login = () => {
         const password = e.target[1].value;
 
         try{
+            setLoading(true);
+
             await signInWithEmailAndPassword(auth, email, password);
+            setLoading(false);
+
             navigate("/");
 
         
@@ -39,6 +49,7 @@ const Login = () => {
     }
     return (
         <>
+        {/* {loading && <ClipLoader />} */}
         <div className='container'>
             <div className='box'>
                 <div className='boxdata'>
@@ -53,7 +64,7 @@ const Login = () => {
                         {passwordVisible ? <i class='bx bxs-hide'></i> : <i class='bx bx-show'></i>}
                     </button>
                     </div>
-                    <button>Log In</button>
+                    {loading  ? <ClipLoader color='#fff' cssOverride={override} /> :<button disabled={loading}>Log In</button>}
                     </form>
                     <p className='changepage'>Don't have an Account? <Link className='link' to="/register">Register</Link></p>
                 </div>

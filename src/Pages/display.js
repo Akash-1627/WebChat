@@ -7,12 +7,17 @@ import { auth,storage,db } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { memail, mpassword } from './Register';
 import { useNavigate } from 'react-router-dom';
-import { doc, setDoc } from 'firebase/firestore'; 
+import { doc, setDoc } from 'firebase/firestore';
+import ClipLoader from "react-spinners/ClipLoader";  
 
 
 const Display = () => {
     const navigate = useNavigate();
     const [err,setErr] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const override: CSSProperties = {
+        paddingTop: '10px'
+      };
     
     const hndlesubmit = async (e)=>{
         e.preventDefault()
@@ -25,7 +30,7 @@ const Display = () => {
 
         try{
 
-        
+        setLoading(true);
 
         const res = await createUserWithEmailAndPassword(auth, email,password);
         console.log(res);
@@ -58,6 +63,7 @@ const Display = () => {
             await setDoc(doc(db, "userChats" ,res.user.uid),{
                 
             })
+            setLoading(false);
             navigate('/')
         });
         }
@@ -72,7 +78,8 @@ const Display = () => {
 
     return (
         <>
-        <div className='container'>
+        {/* {loading && <ClipLoader />} */}
+        <div className={`container ${loading ? 'loading' : ''}`}>
             <div className='box'>
                 <div className='boxdata'>
                     <h1 className='heading'>WebChat</h1>
@@ -84,7 +91,7 @@ const Display = () => {
                         <img src={add} alt=''></img>
                         <span>Add an Avatar</span>
                     </label>
-                    <button>Submit</button>
+                    {loading  ? <ClipLoader color='#fff' cssOverride={override} /> :<button disabled={loading}>Submit</button>}
                     
                     </form>
                     {/* <p className='changepage'>Already Registered? Login</p> */}

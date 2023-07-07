@@ -39,14 +39,14 @@ const Register = () => {
         console.log(password1);
         memail = email1;
         mpassword = password1;
-        const regExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/
+        const regExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
         // const emregExp = /^[a-zA-Z0-9._]+@[a-z]+\.[a-z]{2-6}$/
         const emregExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
         if(password === ""){
             setMessage("Please enter Password")
         }
         else if(!regExp.test(password)){
-            setMessage('Invalid Pasword. Password must be atleast 8 characters long, must contain one digit, one uppercase and one lowercase.')
+            setMessage('Invalid Pasword. Password must be atleast 8 characters long, must contain one uppercase, one lowercase, one digit and one special character.')
         }
         else if(regExp.test(password)){
             
@@ -97,7 +97,9 @@ const Register = () => {
                     </button>
                     </div>
                     <p className='mess' style={{color: '#999', fontSize:'0.8rem'}}>{message.substring(0,61)}</p>
-                    <p className='mess' style={{color: '#999', fontSize:'0.8rem'}}>{message.substring(61,)}</p>
+                    <p className='mess' style={{color: '#999', fontSize:'0.8rem'}}>{message.substring(61,118)}</p>
+                    <p className='mess' style={{color: '#999', fontSize:'0.8rem'}}>{message.substring(118,)}</p>
+
                     
                     <button type="submit">Next</button>
                     
