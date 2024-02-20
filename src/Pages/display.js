@@ -33,21 +33,16 @@ const Display = () => {
         setLoading(true);
 
         const res = await createUserWithEmailAndPassword(auth, email,password);
-        console.log(res);
+        console.log("res",res);
 
 
         const storageRef = ref(storage, displayName);
-        console.log(storageRef);
-
-        const uploadTask = uploadBytesResumable(storageRef, file);
+        console.log("storageRef ",storageRef);
 
 
-        uploadTask.on('state_changed', 
-        
-        
-        () => {
+        await uploadBytesResumable(storageRef, file).then(() => {
             
-            getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            getDownloadURL(storageRef).then(async (downloadURL) => {
             await updateProfile(res.user,{
                 
                 displayName,
@@ -70,7 +65,9 @@ const Display = () => {
         );
     }
     catch(err){
+        console.error(err);
         setErr(true);
+        setLoading(false);
     }
          
     }

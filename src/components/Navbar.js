@@ -24,11 +24,11 @@ const Navbar = () => {
         <div className='navbar'>
             <h2 className='logo'>WebChat</h2>
             <div className='user'>
-                {currentUser && currentUser.photoURL && (
-                    <img src={currentUser.photoURL} alt='' />
+                {currentUser && currentUser?.photoURL && (
+                    <img src={currentUser?.photoURL} alt='' />
                 )}
-                {currentUser && currentUser.displayName && (
-                    <span>{currentUser.displayName}</span>
+                {currentUser && currentUser?.displayName && (
+                    <span>{currentUser?.displayName}</span>
                 )}
                 <button onClick={handleSignOut} title='Sign Out'>
                     <i className='bx bx-log-out'></i>

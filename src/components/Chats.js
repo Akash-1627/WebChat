@@ -7,7 +7,7 @@ import { ChatContext } from '../context/ChatContext';
 
 
 const Chats = ({updateClassName, updateClassName2}) => {
-    const [chats,setChats] = useState([])
+    const [chats,setChats] = useState([]);
     const {currentUser} = useContext(AuthContext);
     const {dispatch} = useContext(ChatContext);
 
@@ -21,18 +21,18 @@ const Chats = ({updateClassName, updateClassName2}) => {
 
     useEffect(()=>{
         const getChats = () =>{
-            if(currentUser){
-                const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
-                    setChats(doc.data());
-                });
-                
-                return () =>{
-                    unsub();
-                };
-            }
+            
+            const unsub = onSnapshot(doc(db, "userChats", currentUser?.uid), (doc) => {
+                setChats(doc.data());
+            });
+            
+            return () =>{
+                unsub();
+            };
+            
         };
 
-        currentUser && currentUser.uid && getChats();
+        currentUser?.uid && getChats();
         },[currentUser?.uid]);
 
         const handleSelect = (u)=>{
@@ -47,9 +47,9 @@ const Chats = ({updateClassName, updateClassName2}) => {
                 {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map(chat=>(
                     <>
                     <div className='userchat' key={chat[0]} onClick={()=>{handleSelect(chat[1].userInfo); handleClick(); handleClick2();}}>
-                        <img src={chat[1].userInfo.photoURL} alt=''></img>
+                        <img src={chat[1].userInfo?.photoURL} alt=''></img>
                         <div className='userchatinfo'>
-                            <span>{chat[1].userInfo.displayName}</span>
+                            <span>{chat[1].userInfo?.displayName}</span>
                             <p>{chat[1].lastMessage?.text}</p>
                         </div>
                         

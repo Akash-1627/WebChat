@@ -34,27 +34,27 @@ const Search = () => {
     }
 
     const handleSelect = async () =>{
-        const combinedId = currentUser.uid > user.uid ? currentUser.uid+user.uid : user.uid + currentUser.uid;
+        const combinedId = currentUser?.uid > user.uid ? currentUser?.uid+user.uid : user?.uid + currentUser?.uid;
         try{
 
             const res = await getDoc(doc(db, "chats", combinedId));
             if(!res.exists()){
                 await setDoc(doc(db, "chats", combinedId),{messages:[]});
 
-                await updateDoc(doc(db,"userChats", currentUser.uid),{
+                await updateDoc(doc(db,"userChats", currentUser?.uid),{
                     [combinedId+".userInfo"]: {
                         uid: user.uid,
-                        displayName: user.displayName,
-                        photoURL: user.photoURL
+                        displayName: user?.displayName,
+                        photoURL: user?.photoURL
                     },
                     [combinedId+".date"]: serverTimestamp()
                 });
 
-                await updateDoc(doc(db,"userChats", user.uid),{
+                await updateDoc(doc(db,"userChats", user?.uid),{
                     [combinedId+".userInfo"]: {
-                        uid: currentUser.uid,
-                        displayName: currentUser.displayName,
-                        photoURL: currentUser.photoURL
+                        uid: currentUser?.uid,
+                        displayName: currentUser?.displayName,
+                        photoURL: currentUser?.photoURL
                     },
                     [combinedId+".date"]: serverTimestamp()
                 });
@@ -75,9 +75,9 @@ const Search = () => {
                 </div>
                 {err && <span>User not Found! </span>}
                 {user && <div className='userchat' onClick={handleSelect}>
-                    <img src={user.photoURL} alt=''></img>
+                    <img src={user?.photoURL} alt=''></img>
                     <div className='userchatinfo'>
-                        <span>{user.displayName}</span>
+                        <span>{user?.displayName}</span>
                     </div>
                 </div>}
             </div>
