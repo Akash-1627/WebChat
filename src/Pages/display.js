@@ -24,20 +24,16 @@ const Display = () => {
         const displayName = e.target[0].value;
         const file = e.target[1].files[0];
         const email= memail;
-        console.log(email);
         const password = mpassword;
-        console.log(password);
 
         try{
 
         setLoading(true);
 
         const res = await createUserWithEmailAndPassword(auth, email,password);
-        console.log("res",res);
 
 
         const storageRef = ref(storage, displayName);
-        console.log("storageRef ",storageRef);
 
 
         await uploadBytesResumable(storageRef, file).then(() => {

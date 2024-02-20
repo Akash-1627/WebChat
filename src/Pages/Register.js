@@ -35,8 +35,6 @@ const Register = () => {
         let email1 = e.target[0].value;
         
         let password1 = e.target[1].value;
-        console.log(email1);
-        console.log(password1);
         memail = email1;
         mpassword = password1;
         const regExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
