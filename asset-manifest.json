@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/WebChat/static/css/main.7ded2abc.css",
+    "main.css": "/WebChat/static/css/main.066ff427.css",
     "main.js": "/WebChat/static/js/main.6c09da23.js",
     "static/js/453.a85d6bdc.chunk.js": "/WebChat/static/js/453.a85d6bdc.chunk.js",
     "static/media/gradient.jpg": "/WebChat/static/media/gradient.a3b452f6493c51da49dc.jpg",
     "index.html": "/WebChat/index.html",
-    "main.7ded2abc.css.map": "/WebChat/static/css/main.7ded2abc.css.map",
+    "main.066ff427.css.map": "/WebChat/static/css/main.066ff427.css.map",
     "main.6c09da23.js.map": "/WebChat/static/js/main.6c09da23.js.map",
     "453.a85d6bdc.chunk.js.map": "/WebChat/static/js/453.a85d6bdc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ded2abc.css",
+    "static/css/main.066ff427.css",
     "static/js/main.6c09da23.js"
   ]
 }
